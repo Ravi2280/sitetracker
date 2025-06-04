@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Tracker - SSM</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Dark Mode Toggle -->
+    <div class="signature">SITE DEVELOPED BY MANAS KUMAR RAO</div>
+
+    <div class="top-bar">
+      <button id="darkModeToggle">🌗 Toggle Theme</button>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="loginScreen">
+      <h2>🔐 Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="hidden">
+      <h1>📋 Site Tracker Dashboard</h1>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+
+      <form id="sectionForm">
+        <input type="text" id="sectionName" placeholder="Section Name" required />
+        <input type="number" id="progress" placeholder="Progress (%)" min="0" max="100" required />
+        <input type="text" id="materials" placeholder="Materials Used" />
+        <textarea id="logEntry" placeholder="Work Done Today"></textarea>
+        <input type="hidden" id="editIndex" />
+        <button type="submit">Save Entry</button>
+      </form>
+
+      <div class="export-buttons">
+        <input type="text" id="searchInput" placeholder="🔍 Search by Section" />
+        <button onclick="exportToPDF()">Export PDF</button>
+        <button onclick="exportToExcel()">Export Excel</button>
+      </div>
+
+      <h2>📊 Progress Chart</h2>
+      <canvas id="progressChart" width="400" height="200"></canvas>
+
+      <h2>📁 All Records</h2>
+      <div id="recordsContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

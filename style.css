@@ -1,0 +1,122 @@
+:root {
+  --bg: #eef2f7;
+  --card: white;
+  --text: #333;
+  --button: #007bff;
+  --button-hover: #0056b3;
+}
+
+body.dark {
+  --bg: #1a1a1a;
+  --card: #2c2c2c;
+  --text: #eee;
+  --button: #4e94f4;
+  --button-hover: #2464d4;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+form, .record {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+input, textarea, button {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+}
+
+input[type="text"], input[type="number"], textarea {
+  width: 100%;
+}
+
+button {
+  background: var(--button);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+.logout-btn {
+  float: right;
+  background-color: #dc3545;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record h3 {
+  margin: 0;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions button {
+  margin-right: 5px;
+  background-color: #28a745;
+}
+
+.actions .delete-btn {
+  background-color: #dc3545;
+}
+
+.top-bar {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .export-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.signature {
+  font-family: 'Algerian', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  color: #007bff;
+  z-index: 999;
+  letter-spacing: 1px;
+}
